@@ -1,0 +1,13 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<input type="text" [(ngModel)]="searchString" />
+<button (click)="search()">Search</button>
+<div class="card-container">
+  <ng-container *ngFor="let card of renderList">
+    <app-card-component [cardData]="card"></app-card-component>
+  </ng-container>
+  <ng-container *ngIf="renderList.length === 0">
+    <p>Data not found</p>
+  </ng-container>
+</div>
